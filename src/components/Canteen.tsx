@@ -1,10 +1,10 @@
-import React from 'react';
-import { Image, SectionList, Text, View } from 'react-native';
+import { Button, Image,  SectionList, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '../styles/Canteen';
 import { CanteenItems } from '../data/menu';
 import Header from './Header';
 const Canteen = () => {
+
   return (
 <SafeAreaProvider>
     <SafeAreaView>
@@ -24,8 +24,12 @@ const Canteen = () => {
           </View>
          
         )}
-        renderSectionHeader={({ section: { FoodType } }) => (
-          <View style={styles.header}><Text >{FoodType}</Text></View>
+        renderSectionHeader={({ section: { FoodType , data} }) => (
+          <View style={styles.header}>
+            <Text >{FoodType}</Text>
+            <Text>{data.length}</Text>
+            <Button title='Add' color='green' />
+          </View>
         )} />
 
     </SafeAreaView>

@@ -17,7 +17,8 @@ heading:{
 header:{
   display:'flex',
   flexDirection:'row',
-  justifyContent:'center',
+  justifyContent:'space-between',
+  alignItems:'center',
   marginBottom:10,
   backgroundColor:'#E0A36D',
   padding:5
@@ -42,6 +43,10 @@ cardContainer:{
 image : {
     height:150,
     width:150
+} , 
+
+AddBtn:{
+    
 }
 
 })
