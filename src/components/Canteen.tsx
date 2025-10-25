@@ -1,4 +1,4 @@
-import { Button, Image,  SectionList, Text, View } from 'react-native';
+import { Button, Image,  Pressable,  SectionList, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '../styles/Canteen';
 import { CanteenItems } from '../data/menu';
@@ -24,6 +24,11 @@ const Canteen = () => {
               <Image  style = {styles.image}source={{ uri: item.Image }}/>
               <Text>{item.Name}</Text>
               <Text>{item.Price}</Text>
+               
+              <Pressable>
+                <Text style = {styles.RemoveBtn}>Remove</Text>
+            </Pressable>
+              
             </View>
           </View>
           </View>

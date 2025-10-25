@@ -64,5 +64,12 @@ modalHeader:{
     fontStyle:'italic',
     fontWeight:'500',
     color:'#E0A36D'
-}
+},
+RemoveBtn:{
+    padding:5,
+    textAlign:'center',
+    backgroundColor:'#ff3737',
+    borderRadius: 15,
+    cursor:'pointer'
+},
 })
