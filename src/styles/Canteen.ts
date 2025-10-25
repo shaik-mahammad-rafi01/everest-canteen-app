@@ -54,9 +54,15 @@ container:{
     marginLeft:100,
     marginRight:50,
     fontSize:20,
-    backgroundColor:'#deebcc',
+    backgroundColor:'#d9e2ccff',
     padding:40,
     borderRadius:10,
     gap:20
+},
+modalHeader:{
+    fontSize:20,
+    fontStyle:'italic',
+    fontWeight:'500',
+    color:'#E0A36D'
 }
 })

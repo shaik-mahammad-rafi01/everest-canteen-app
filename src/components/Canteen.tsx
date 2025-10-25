@@ -8,6 +8,7 @@ import Modal from './Modal';
 
 const Canteen = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [presentSection , setPresentSection] = useState("")
 
   return (
 <SafeAreaProvider>
@@ -32,14 +33,14 @@ const Canteen = () => {
           <View style={styles.header}>
             <Text >{FoodType}</Text>
             <Text>{data.length}</Text>
-            <Button title='Add' color='green' onPress={()=>setIsModalOpen(true)}/>
+            <Button title='Add' color='green' onPress={()=> {setPresentSection(FoodType);  setIsModalOpen(true)}}/>
           </View>
         )} />
         {isModalOpen && (
             <View style = {{position: 'absolute'}}>
-                <Modal onClose={() => setIsModalOpen(false)} />
+                <Modal sectionName = {presentSection} onClose={() => setIsModalOpen(false)} />
             </View>
-        )}        
+        )}   
 
      </SafeAreaView>
     </SafeAreaProvider>
