@@ -47,6 +47,16 @@ image : {
 
 AddBtn:{
     
+},
+container:{
+    display:'flex',
+    marginTop:200,
+    marginLeft:100,
+    marginRight:50,
+    fontSize:20,
+    backgroundColor:'#deebcc',
+    padding:40,
+    borderRadius:10,
+    gap:20
 }
-
 })
