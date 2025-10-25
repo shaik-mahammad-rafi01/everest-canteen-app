@@ -4,14 +4,14 @@ headingContainer:{
   display:'flex',
   flexDirection:'row',
   justifyContent:'center',
-  backgroundColor:'#524B46',
-  padding:10,
-  marginBottom:10,
- 
+  fontStyle:'italic',
+  padding:10, 
 },
 heading:{
   fontSize:22,
-  fontWeight:'600',
+  fontWeight:'700',
+  fontStyle:'italic',
+  color:'#cca039'
 
 },
 header:{
