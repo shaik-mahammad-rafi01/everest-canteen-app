@@ -1,10 +1,11 @@
-import { Button, Image,  Pressable,  SectionList, Text, View } from 'react-native';
+import { Button, SectionList, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '../styles/Canteen';
 import { CanteenItems } from '../data/menu';
 import Header from './Header';
 import React, { useState } from 'react';
 import Modal from './Modal';
+import CardItem from './ItemCard';
 
 const Canteen = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -18,20 +19,7 @@ const Canteen = () => {
         sections={CanteenItems}
         keyExtractor={(item, index) => item.Name + index}
         renderItem={({ item }) => (
-          <View style={styles.mainContainer}>
-          <View style={styles.cardContainer}>
-            <View style={styles.card}>
-              <Image  style = {styles.image}source={{ uri: item.Image }}/>
-              <Text>{item.Name}</Text>
-              <Text>{item.Price}</Text>
-               
-              <Pressable>
-                <Text style = {styles.RemoveBtn}>Remove</Text>
-            </Pressable>
-              
-            </View>
-          </View>
-          </View>
+            <CardItem item={item} />
          
         )}
         renderSectionHeader={({ section: { FoodType , data} }) => (
