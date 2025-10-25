@@ -3,7 +3,11 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '../styles/Canteen';
 import { CanteenItems } from '../data/menu';
 import Header from './Header';
+import React, { useState } from 'react';
+import Modal from './Modal';
+
 const Canteen = () => {
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   return (
 <SafeAreaProvider>
@@ -28,11 +32,16 @@ const Canteen = () => {
           <View style={styles.header}>
             <Text >{FoodType}</Text>
             <Text>{data.length}</Text>
-            <Button title='Add' color='green' />
+            <Button title='Add' color='green' onPress={()=>setIsModalOpen(true)}/>
           </View>
         )} />
+        {isModalOpen && (
+            <View style = {{position: 'absolute'}}>
+                <Modal onClose={() => setIsModalOpen(false)} />
+            </View>
+        )}        
 
-    </SafeAreaView>
+     </SafeAreaView>
     </SafeAreaProvider>
   );
 }
