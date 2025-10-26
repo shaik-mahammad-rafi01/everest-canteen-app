@@ -24,7 +24,16 @@ const AddItem = (presentSection: string, itemName: string, price: number) => {
   );
   setIsModalOpen(false);
 };
-
+const DeleteItem = (presentSection:string , itemName:string) =>{
+    setCanteenItems(previousData=>
+        previousData.map(section => section.FoodType === presentSection ?
+            {
+               ...section, data: section.data.filter(item=> item.Name !== itemName)
+            } : section
+        ) 
+        
+    )
+}
 
   return (
 <SafeAreaProvider>
@@ -33,8 +42,8 @@ const AddItem = (presentSection: string, itemName: string, price: number) => {
       <SectionList
         sections={canteenItems}
         keyExtractor={(item, index) => item.Name + index}
-        renderItem={({ item }) => (
-            <CardItem item={item} />
+        renderItem={({ item , section }) => (
+            <CardItem item={item} Delete={(itemName)=>DeleteItem(section.FoodType, itemName)}/>
          
         )}
         renderSectionHeader={({ section: { FoodType , data} }) => (
