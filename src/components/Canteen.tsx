@@ -1,4 +1,4 @@
-import { Button, SectionList, Text, View } from 'react-native';
+import { Pressable, SectionList, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '../styles/Canteen';
 import { CanteenItems } from '../data/menu';
@@ -50,7 +50,10 @@ const DeleteItem = (presentSection:string , itemName:string) =>{
           <View style={styles.header}>
             <Text >{FoodType}</Text>
             <Text>{data.length}</Text>
-            <Button title='Add' color='green' onPress={()=> {setPresentSection(FoodType);  setIsModalOpen(true)}}/>
+            <Pressable style={styles.AddBtn} onPress={()=> {setPresentSection(FoodType);  setIsModalOpen(true)}}>
+                <Text>Add</Text>
+            </Pressable>
+            {/* <Button title='Add' color='green' onPress={()=> {setPresentSection(FoodType);  setIsModalOpen(true)}}/> */}
           </View>
         )} />
         {isModalOpen && (

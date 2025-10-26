@@ -46,18 +46,23 @@ image : {
 } , 
 
 AddBtn:{
-    
+    borderWidth: 1,
+    padding: 8,
+    borderRadius:10,
+    backgroundColor:'green',
+    width:50,
+    textAlign:'center'
 },
 container:{
     display:'flex',
     marginTop:200,
-    marginLeft:100,
-    marginRight:50,
+    marginLeft:80,
     fontSize:20,
     backgroundColor:'#d9e2ccff',
     padding:40,
     borderRadius:10,
-    gap:20
+    gap:20,
+    width:250
 },
 modalHeader:{
     fontSize:20,
