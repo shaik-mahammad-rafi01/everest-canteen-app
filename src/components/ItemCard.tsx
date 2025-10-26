@@ -3,7 +3,7 @@ import { View, Text, Image, Pressable } from 'react-native';
 import { styles } from '../styles/Canteen';
 
 type CardItemProps = {
-  item: { Name: string; Price: string; Image: string };
+  item: { Name: string; Price: number; Image: string };
 };
 
 const CardItem = ({ item }: CardItemProps) => {
@@ -13,7 +13,7 @@ const CardItem = ({ item }: CardItemProps) => {
         <View style={styles.card}>
           <Image style={styles.image} source={{ uri: item.Image }} />
           <Text>{item.Name}</Text>
-          <Text>{item.Price}</Text>
+          <Text>Price : ₹ {item.Price}</Text>
 
           <Pressable >
             <Text style={styles.RemoveBtn}>Remove</Text>
