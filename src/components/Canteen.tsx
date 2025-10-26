@@ -53,7 +53,6 @@ const DeleteItem = (presentSection:string , itemName:string) =>{
             <Pressable style={styles.AddBtn} onPress={()=> {setPresentSection(FoodType);  setIsModalOpen(true)}}>
                 <Text>Add</Text>
             </Pressable>
-            {/* <Button title='Add' color='green' onPress={()=> {setPresentSection(FoodType);  setIsModalOpen(true)}}/> */}
           </View>
         )} />
         {isModalOpen && (

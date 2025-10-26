@@ -21,8 +21,7 @@ header:{
   alignItems:'center',
   marginBottom:10,
   backgroundColor:'#E0A36D',
-  padding:5
-  
+  padding:8,
 },
 mainContainer:{
 display:'flex',
