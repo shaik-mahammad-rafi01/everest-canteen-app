@@ -18,6 +18,18 @@ describe("Modal test cases" , ()=>{
         fireEvent.press(addBtn)
         expect(Alert.alert).toHaveBeenCalledWith("fill all fields") 
     })
+    test("it should alert in the price is not valid" , ()=>{
+        render(<Modal sectionName={"Beverages"} onClose={function (): void {} } 
+        addItem={function (_name: string, _price: number): void {} } />)
+
+        const ItemName = screen.getByPlaceholderText("Enter the item name")
+        const PriceInput = screen.getByPlaceholderText("enter the price")
+        const addBtn = screen.getByText("Add")
+        fireEvent.changeText(ItemName , "milk")
+        fireEvent.changeText(PriceInput , "aaa")
+        fireEvent.press(addBtn)
+        expect(Alert.alert).toHaveBeenCalledWith("invalid price") 
+    })
 })
 
 
