@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Button, Text, View } from 'react-native';
+import { Alert, Pressable, Text, View } from 'react-native';
 import { TextInput } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { styles } from '../styles/Canteen';
@@ -30,7 +30,7 @@ const Modal = ({ sectionName, onClose, addItem }: ModalProps) => {
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
-        <Text style={styles.modalHeader}>{sectionName}</Text>
+        <Text style={styles.modalHeader}>Add  {sectionName}</Text>
         <Text>Item Name : </Text>
         <TextInput
           placeholder="Enter the item name "
@@ -43,8 +43,14 @@ const Modal = ({ sectionName, onClose, addItem }: ModalProps) => {
           value={price}
           onChangeText={setPrice}
         />
-        <Button title="Add Item" onPress={handleFormInputs} />
-        <Button title="Close" onPress={onClose} />
+        <View style={styles.modalBtnContainer}>
+          <Pressable onPress={handleFormInputs}>
+            <Text style={styles.modalAddBtn}>Add</Text>
+          </Pressable>
+          <Pressable onPress={onClose}>
+            <Text style={styles.modalRevoveBtn}>Cancel</Text>
+          </Pressable>
+        </View>
       </View>
     </SafeAreaProvider>
   );
