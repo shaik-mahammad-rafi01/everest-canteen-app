@@ -9,7 +9,7 @@ export const CanteenItems = [
   },
   {
     FoodType: "Main courses",
-    data: [{Image:"https://www.shutterstock.com/image-photo/traditional-chicken-biryani-served-brass-600nw-2622739739.jpg",Name: "Biryani",Price: 250}, {Image : "https://mamanagis.ie/wp-content/uploads/2021/11/Indian-Chapati-Bread.jpg" , Name : "Chapati" , Price : 25},{Image:"https://eatsimplefood.com/wp-content/uploads/2020/04/Indian-Curry-Chicken-Recipe-1200-EatSimpleFood.com_.jpg" , Name : "chicken curry with rice" , Price: 230}]
+    data: [{Image:"https://www.shutterstock.com/image-photo/traditional-chicken-biryani-served-brass-600nw-2622739739.jpg",Name: "Biryani",Price: 250}, {Image : "https://mamanagis.ie/wp-content/uploads/2021/11/Indian-Chapati-Bread.jpg" , Name : "Chapati" , Price : 25},{Image:"https://eatsimplefood.com/wp-content/uploads/2020/04/Indian-Curry-Chicken-Recipe-1200-EatSimpleFood.com_.jpg" , Name : "chicken curry" , Price: 230}]
   },
   {
     FoodType: "Snacks",
@@ -17,6 +17,6 @@ export const CanteenItems = [
   },
   {
     FoodType: "Desserts",
-    data: [{Image:"https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11-500x375.jpg",Name: "Ice cream",Price: 120,},{Image :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTTyy1twaWcho6CLm46WzF5WKyf33bQrI3FqT7tg8ZKyQxlIVC3hFOpRJyhixx0fgo_74&usqp=CAU" , Name : "Cup cake" , Price : 75},{Image:"https://chopnotch.com/wp-content/uploads/2020/11/Panna-Cotta-1.jpg", Name:"straberry panna chotta" , Price :160 }]
+    data: [{Image:"https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11-500x375.jpg",Name: "Ice cream",Price: 120,},{Image :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTTyy1twaWcho6CLm46WzF5WKyf33bQrI3FqT7tg8ZKyQxlIVC3hFOpRJyhixx0fgo_74&usqp=CAU" , Name : "Cup cake" , Price : 75},{Image:"https://chopnotch.com/wp-content/uploads/2020/11/Panna-Cotta-1.jpg", Name:"straberry" , Price :160 }]
   },
 ];

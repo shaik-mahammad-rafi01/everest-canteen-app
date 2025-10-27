@@ -30,18 +30,26 @@ export const styles = StyleSheet.create({
     },
     card: {
         borderWidth: 1,
-        margin: 10,
+        marginRight:30,
+        marginLeft:30,
+        marginBottom:10,
         padding: 20,
         borderRadius: 10,
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        gap:40
     },
     cardContainer: {
         display: 'flex',
         flexDirection: 'row',
+        justifyContent:'center'
     },
 
     image: {
-        height: 150,
-        width: 150
+        height: 120,
+        width: 100
     },
 
     AddBtn: {
@@ -98,5 +106,11 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         borderRadius: 8,
         backgroundColor: '#ff3737'
-    }
+    },
+    imageTextContainer:{
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        flexWrap:'wrap'
+    },
 })
