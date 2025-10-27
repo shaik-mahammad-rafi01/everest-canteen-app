@@ -4,10 +4,10 @@ import { styles } from '../styles/Canteen';
 
 type CardItemProps = {
   item: { Name: string; Price: number; Image: string };
-  Delete : (itemName:string)=>void
+  Delete: (itemName: string) => void;
 };
 
-const CardItem = ({ item , Delete}: CardItemProps) => {
+const CardItem = ({ item, Delete }: CardItemProps) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.cardContainer}>
@@ -16,7 +16,7 @@ const CardItem = ({ item , Delete}: CardItemProps) => {
           <Text>{item.Name}</Text>
           <Text>Price : ₹ {item.Price}</Text>
 
-          <Pressable onPress={()=>Delete(item.Name)}>
+          <Pressable onPress={() => Delete(item.Name)}>
             <Text style={styles.RemoveBtn}>Remove</Text>
           </Pressable>
         </View>

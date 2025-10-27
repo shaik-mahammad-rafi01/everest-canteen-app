@@ -6,9 +6,9 @@ import { Text } from 'react-native';
 const Header = () => {
   return (
     <View style={styles.headingContainer}>
-        <Text style = {styles.heading}>Everest Canteen 🍲</Text>
+      <Text style={styles.heading}>Everest Canteen 🍲</Text>
     </View>
   );
-}
+};
 
 export default Header;
