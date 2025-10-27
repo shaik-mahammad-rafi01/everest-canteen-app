@@ -1,11 +1,13 @@
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Canteen from './src/components/Canteen';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 function App() {
   return (
     <SafeAreaProvider>
-
-      <Canteen />
+      <SafeAreaView>
+        <Canteen />
+      </SafeAreaView>
     </SafeAreaProvider>
   );
 }
