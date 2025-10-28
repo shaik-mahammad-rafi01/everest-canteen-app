@@ -1,10 +1,10 @@
 import { Pressable, SectionList, Text, View } from 'react-native';
-import { styles } from '../styles/Canteen';
-import { CanteenItems } from '../data/menu';
-import Header from './Header';
+import { styles } from '../../styles/Canteen';
+import { CanteenItems } from '../../data/menu';
+import Header from '../Header/Header';
 import React, { useState } from 'react';
-import Modal from './Modal';
-import CardItem from './ItemCard';
+import Modal from '../Modal/Modal';
+import CardItem from '../ItemCard/ItemCard';
 
 const Canteen = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { styles } from '../styles/Canteen';
+import { styles } from '../../styles/Canteen';
 import { Text } from 'react-native';
 
 const Header = () => {

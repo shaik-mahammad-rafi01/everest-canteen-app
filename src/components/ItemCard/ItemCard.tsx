@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
-import { styles } from '../styles/Canteen';
+import { styles } from '../../styles/Canteen';
 
 type CardItemProps = {
   item: { Name: string; Price: number; Image: string };

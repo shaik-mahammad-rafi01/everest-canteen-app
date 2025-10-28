@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react-native";
-import Header from "../src/components/Header";
+import Header from "./Header";
 
 test("renders correctly", () => {
   render(<Header />);

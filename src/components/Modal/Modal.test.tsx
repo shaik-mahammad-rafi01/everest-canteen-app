@@ -1,5 +1,5 @@
 import { fireEvent, render, screen} from "@testing-library/react-native";
-import Modal from "../src/components/Modal";
+import Modal from "./Modal";
 import { Alert } from "react-native";
 
 describe("Modal test cases" , ()=>{

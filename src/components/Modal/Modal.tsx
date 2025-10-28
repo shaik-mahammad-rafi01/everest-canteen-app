@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, Pressable, Text, View } from 'react-native';
 import { TextInput } from 'react-native';
-import { styles } from '../styles/Canteen';
+import { styles } from '../../styles/Canteen';
 type ModalProps = {
   sectionName: string;
   onClose: () => void;

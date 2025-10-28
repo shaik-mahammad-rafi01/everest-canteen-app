@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Canteen from '../components/Canteen';
-import Order from '../components/Order';
+import Canteen from '../components/Canteen/Canteen';
+import Order from '../components/Order/Order';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 const Tab = createBottomTabNavigator();
 export const TabNavigations = () => {

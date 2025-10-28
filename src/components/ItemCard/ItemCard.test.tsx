@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import CardItem from '../src/components/ItemCard';
+import CardItem from './ItemCard';
 
 describe('CardItem testcases', () => {
   test('it should render the card item with props', () => {

@@ -1,5 +1,5 @@
 import { render, screen, userEvent} from "@testing-library/react-native";
-import Canteen from "../src/components/Canteen";
+import Canteen from "./Canteen";
 
 describe("Canteen test cases" , ()=>{
     test("it should render canteen menu items" , ()=>{
