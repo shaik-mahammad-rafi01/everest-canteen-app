@@ -30,21 +30,21 @@ export const styles = StyleSheet.create({
     },
     card: {
         borderWidth: 1,
-        marginRight:30,
-        marginLeft:30,
-        marginBottom:10,
+        marginRight: 30,
+        marginLeft: 30,
+        marginBottom: 10,
         padding: 20,
         borderRadius: 10,
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'center',
-        gap:40
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 40
     },
     cardContainer: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent:'center'
+        justifyContent: 'center'
     },
 
     image: {
@@ -107,10 +107,10 @@ export const styles = StyleSheet.create({
         borderRadius: 8,
         backgroundColor: '#ff3737'
     },
-    imageTextContainer:{
-        display:'flex',
-        flexDirection:'column',
-        alignItems:'center',
-        flexWrap:'wrap'
+    imageTextContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        flexWrap: 'wrap'
     },
 })
