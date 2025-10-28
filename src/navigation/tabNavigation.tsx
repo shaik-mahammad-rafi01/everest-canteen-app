@@ -6,10 +6,10 @@ const Tab = createBottomTabNavigator();
 export const TabNavigations = () => {
   return (
     <SafeAreaProvider>
-    <Tab.Navigator>
-      <Tab.Screen  name="Menu" component={Canteen} />
-      <Tab.Screen name="Order" component={Order} />
-    </Tab.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Menu" component={Canteen} />
+        <Tab.Screen name="Order" component={Order} />
+      </Tab.Navigator>
     </SafeAreaProvider>
   );
 };
