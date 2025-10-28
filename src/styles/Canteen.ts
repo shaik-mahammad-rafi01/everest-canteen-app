@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
         fontWeight: '700',
         fontStyle: 'italic',
         color: '#cca039'
-
     },
     header: {
         display: 'flex',
@@ -65,11 +64,12 @@ export const styles = StyleSheet.create({
         marginTop: 200,
         marginLeft: 80,
         fontSize: 20,
-        backgroundColor: '#d9e2ccff',
+        backgroundColor: '#f8f8f8ff',
         padding: 40,
         borderRadius: 10,
-        gap: 20,
-        width: 250
+        gap: 10,
+        width: 250,
+        borderWidth: 1
     },
     modalHeader: {
         fontSize: 20,
@@ -95,9 +95,6 @@ export const styles = StyleSheet.create({
         padding: 5,
         textAlign: 'center',
         borderRadius: 8,
-        backgroundColor: '#33cc33'
-
-
     },
     modalRevoveBtn: {
         borderWidth: 1,
@@ -105,7 +102,6 @@ export const styles = StyleSheet.create({
         padding: 5,
         textAlign: 'center',
         borderRadius: 8,
-        backgroundColor: '#ff3737'
     },
     imageTextContainer: {
         display: 'flex',
@@ -113,7 +109,12 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         flexWrap: 'wrap'
     },
-    modalViewContainer:{
-        position:'absolute'
+    modalViewContainer: {
+        position: 'absolute'
+    },
+    inputs: {
+        borderWidth: 1,
+        padding: 8,
+        borderRadius: 8
     }
 })

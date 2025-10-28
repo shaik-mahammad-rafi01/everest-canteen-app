@@ -31,12 +31,14 @@ const Modal = ({ sectionName, onClose, addItem }: ModalProps) => {
       <Text style={styles.modalHeader}>Add {sectionName}</Text>
       <Text>Item Name : </Text>
       <TextInput
+        style={styles.inputs}
         placeholder="Enter the item name "
         value={itemName}
         onChangeText={setItemName}
       />
       <Text>Price : </Text>
       <TextInput
+        style={styles.inputs}
         placeholder="enter the price"
         value={price}
         onChangeText={setPrice}
