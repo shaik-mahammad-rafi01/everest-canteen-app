@@ -113,4 +113,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         flexWrap: 'wrap'
     },
+    modalViewContainer:{
+        position:'absolute'
+    }
 })

@@ -11,10 +11,10 @@ const Canteen = () => {
   const [presentSection, setPresentSection] = useState('');
   const [canteenItems, setCanteenItems] = useState(CanteenItems);
 
-  const AddItem = (presentSection: string, itemName: string, price: number) => {
+  const AddItem = (SectionName: string, itemName: string, price: number) => {
     setCanteenItems(previousData =>
       previousData.map(section =>
-        section.FoodType === presentSection
+        section.FoodType === SectionName
           ? {
               ...section,
               data: [
@@ -27,10 +27,10 @@ const Canteen = () => {
     );
     setIsModalOpen(false);
   };
-  const DeleteItem = (presentSection: string, itemName: string) => {
+  const DeleteItem = (SectionName: string, itemName: string) => {
     setCanteenItems(previousData =>
       previousData.map(section =>
-        section.FoodType === presentSection
+        section.FoodType === SectionName
           ? {
               ...section,
               data: section.data.filter(item => item.Name !== itemName),
@@ -69,7 +69,7 @@ const Canteen = () => {
         )}
       />
       {isModalOpen && (
-        <View style={{ position: 'absolute' }}>
+        <View style={styles.modalViewContainer}>
           <Modal
             sectionName={presentSection}
             onClose={() => setIsModalOpen(false)}
