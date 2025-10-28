@@ -1,14 +1,11 @@
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Canteen from './src/components/Canteen';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { TabNavigations } from './src/navigation/tabNavigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <Canteen />
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <TabNavigations />
+    </NavigationContainer>
   );
 }
 
