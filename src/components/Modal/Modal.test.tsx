@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import Modal from './Modal';
+import ModalMenu from './Modal';
 import { Alert } from 'react-native';
 
 describe('Modal test cases', () => {
@@ -8,7 +8,7 @@ describe('Modal test cases', () => {
   const mockFunction = jest.fn();
   test('it should render the model', () => {
     render(
-      <Modal
+      <ModalMenu
         sectionName={'Beverages'}
         onClose={function (): void {}}
         addItem={mockFunction}
@@ -18,7 +18,7 @@ describe('Modal test cases', () => {
   });
   test('is should validate inputs', () => {
     render(
-      <Modal
+      <ModalMenu
         sectionName={'Break fast'}
         onClose={mockFunction}
         addItem={mockFunction}
@@ -32,7 +32,7 @@ describe('Modal test cases', () => {
   });
   test('it should alert in the price is not valid', () => {
     render(
-      <Modal
+      <ModalMenu
         sectionName={'Beverages'}
         onClose={mockFunction}
         addItem={mockFunction}
@@ -49,7 +49,7 @@ describe('Modal test cases', () => {
   });
   test('it should alert if the price amount is zero', () => {
     render(
-      <Modal
+      <ModalMenu
         sectionName={'snack'}
         onClose={mockFunction}
         addItem={mockFunction}
@@ -66,7 +66,7 @@ describe('Modal test cases', () => {
   });
   test('it should alert if the price amount is negative', () => {
     render(
-      <Modal
+      <ModalMenu
         sectionName={'Breakfast'}
         onClose={mockFunction}
         addItem={mockFunction}
