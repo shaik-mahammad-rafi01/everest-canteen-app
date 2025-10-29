@@ -3,8 +3,8 @@ import { CanteenMenuStyles } from './CanteenMenuStyles';
 import { CanteenItems } from '../../data/menu';
 import Header from '../Header/Header';
 import React, { useState } from 'react';
-import Modal from '../Modal/Modal';
 import CardItem from '../ItemCard/ItemCard';
+import AddItemModal from '../Modal/Modal';
 
 const CanteenMenu = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -70,7 +70,7 @@ const CanteenMenu = () => {
       />
       {isModalOpen && (
         <View style={CanteenMenuStyles.modalViewContainer}>
-          <Modal
+          <AddItemModal
             sectionName={presentSection}
             onClose={() => setIsModalOpen(false)}
             addItem={(name: string, price: number) =>
