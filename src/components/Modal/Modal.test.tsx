@@ -47,4 +47,15 @@ describe('Modal test cases', () => {
     fireEvent.press(addBtn);
     expect(Alert.alert).toHaveBeenCalledWith('invalid price');
   });
+  test("it should alert if the price amount is zero" , ()=>{
+    render(<Modal sectionName={'snack'} onClose={mockFunction} addItem={mockFunction} />)
+
+    const ItemName = screen.getByPlaceholderText('Enter the item name');
+    const PriceInput = screen.getByPlaceholderText('enter the price');
+    const addBtn = screen.getByText('Add');
+    fireEvent.changeText(ItemName, 'milk');
+    fireEvent.changeText(PriceInput, 0);
+    fireEvent.press(addBtn);
+    expect(Alert.alert).toHaveBeenCalledWith('invalid price');
+  })
 });
