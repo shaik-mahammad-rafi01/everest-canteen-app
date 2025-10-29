@@ -1,7 +1,7 @@
 export interface MenuItem  {
     Image : string,
     Name : string,
-    Price: string
+    Price: number
 
 }
 
