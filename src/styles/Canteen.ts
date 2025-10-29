@@ -116,5 +116,16 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 8,
         borderRadius: 8
+    },
+    icon:{
+        height:40,
+        width:40
+    },
+    headerContainer:{
+        display:'flex',
+        flexDirection:'row',
+        gap:10,
+        padding:2,
+        alignItems:'center'
     }
 })
