@@ -5,7 +5,7 @@ import { Alert } from 'react-native';
 describe('Modal test cases', () => {
   jest.spyOn(Alert, 'alert');
 
-  const mockFunction = jest.fn()
+  const mockFunction = jest.fn();
   test('it should render the model', () => {
     render(
       <Modal
@@ -47,8 +47,14 @@ describe('Modal test cases', () => {
     fireEvent.press(addBtn);
     expect(Alert.alert).toHaveBeenCalledWith('invalid price');
   });
-  test("it should alert if the price amount is zero" , ()=>{
-    render(<Modal sectionName={'snack'} onClose={mockFunction} addItem={mockFunction} />)
+  test('it should alert if the price amount is zero', () => {
+    render(
+      <Modal
+        sectionName={'snack'}
+        onClose={mockFunction}
+        addItem={mockFunction}
+      />,
+    );
 
     const ItemName = screen.getByPlaceholderText('Enter the item name');
     const PriceInput = screen.getByPlaceholderText('enter the price');
@@ -57,5 +63,21 @@ describe('Modal test cases', () => {
     fireEvent.changeText(PriceInput, 0);
     fireEvent.press(addBtn);
     expect(Alert.alert).toHaveBeenCalledWith('invalid price');
-  })
+  });
+  test('it should alert if the price amount is negative', () => {
+    render(
+      <Modal
+        sectionName={'Breakfast'}
+        onClose={mockFunction}
+        addItem={mockFunction}
+      />,
+    );
+    const ItemName = screen.getByPlaceholderText('Enter the item name');
+    const PriceInput = screen.getByPlaceholderText('enter the price');
+    const addBtn = screen.getByText('Add');
+    fireEvent.changeText(ItemName, 'upma');
+    fireEvent.changeText(PriceInput, -20);
+    fireEvent.press(addBtn);
+    expect(Alert.alert).toHaveBeenCalledWith('invalid price');
+  });
 });
