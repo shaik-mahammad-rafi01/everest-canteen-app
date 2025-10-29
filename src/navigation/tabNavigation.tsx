@@ -1,15 +1,18 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Canteen from '../components/Canteen/Canteen';
 import Order from '../components/Order/Order';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
 const Tab = createBottomTabNavigator();
 export const TabNavigations = () => {
   return (
-    <SafeAreaProvider>
-      <Tab.Navigator>
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="Menu"
+        screenOptions={{ animation: 'shift' }}
+      >
         <Tab.Screen name="Menu" component={Canteen} />
         <Tab.Screen name="Order" component={Order} />
       </Tab.Navigator>
-    </SafeAreaProvider>
+    </NavigationContainer>
   );
 };
