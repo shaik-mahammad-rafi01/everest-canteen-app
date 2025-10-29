@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 import CardItem from './ItemCard';
 
 describe('CardItem testcases', () => {
+  const mockFunction = jest.fn();
   test('it should render the card item with props', () => {
     render(
       <CardItem
@@ -10,13 +11,13 @@ describe('CardItem testcases', () => {
           Price: 20,
           Image: '',
         }}
-        Delete={function (_itemName: string): void {}}
+        Delete={mockFunction}
       />,
     );
     expect(screen.getByText('Cake')).toBeTruthy();
   });
   test('It should call delete funtion after delete item', () => {
-    const Delete = jest.fn();
+    
     render(
       <CardItem
         item={{
@@ -24,12 +25,14 @@ describe('CardItem testcases', () => {
           Price: 40,
           Image: '',
         }}
-        Delete={Delete}
+        Delete={mockFunction}
       />,
     );
     expect(screen.getByText('maggie')).toBeTruthy();
     const removeBtn = screen.getByText('Remove');
     fireEvent.press(removeBtn);
-    expect(Delete).toHaveBeenCalledWith('maggie');
+    expect(mockFunction).toHaveBeenCalledTimes(1)
+    expect(mockFunction).toHaveBeenCalledWith('maggie');
+
   });
 });

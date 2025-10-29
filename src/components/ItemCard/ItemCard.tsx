@@ -1,28 +1,29 @@
 import React from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
-import { styles } from '../../styles/Canteen';
+import { ItemsCardStyles } from './ItemCardStyles';
 
 type CardItemProps = {
   item: { Name: string; Price: number; Image: string };
-  Delete: (itemName: string) => void;
+  Delete: (itemName: string) => void
 };
 
 const CardItem = ({ item, Delete }: CardItemProps) => {
+  
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.cardContainer}>
-        <View style={styles.card}>
+    <View style={ItemsCardStyles.mainContainer}>
+      <View style={ItemsCardStyles.cardContainer}>
+        <View style={ItemsCardStyles.card}>
           <View>
-            <Image style={styles.image} source={{ uri: item.Image }} />
+            <Image style={ItemsCardStyles.image} source={{ uri: item.Image }} />
           </View>
-          <View style={styles.imageTextContainer}>
+          <View style={ItemsCardStyles.imageTextContainer}>
             <Text>{item.Name}</Text>
             <Text>Price : ₹ {item.Price}</Text>
           </View>
 
           <View>
-            <Pressable onPress={() => Delete(item.Name)}>
-              <Text style={styles.RemoveBtn}>Remove</Text>
+            <Pressable onPress={()=>Delete(item.Name)}>
+              <Text style={ItemsCardStyles.RemoveBtn}>Remove</Text>
             </Pressable>
           </View>
         </View>
