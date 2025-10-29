@@ -1,18 +1,18 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { styles } from '../../styles/Canteen';
 import { Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { HeaderStyles } from './HeaderStyles';
 
 const Header = () => {
   return (
     <SafeAreaView>
-      <View style={styles.headerContainer}>
+      <View style={HeaderStyles.headerContainer}>
         <View>
-          <Image style={styles.icon} source={require('../asserts/icon.png')} />
+          <Image style={HeaderStyles.icon} source={require('../asserts/icon.png')} />
         </View>
-        <View style={styles.headingContainer}>
-          <Text style={styles.heading}>Everest Canteen 🍲</Text>
+        <View style={HeaderStyles.headingContainer}>
+          <Text style={HeaderStyles.heading}>Everest Canteen 🍲</Text>
         </View>
       </View>
     </SafeAreaView>
