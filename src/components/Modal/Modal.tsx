@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Alert, Pressable, Text, View } from 'react-native';
 import { TextInput } from 'react-native';
-import { styles } from '../../styles/Canteen';
+import { Modal } from 'react-native';
+import { ModalStyles } from './ModalStyles';
 type ModalProps = {
   sectionName: string;
   onClose: () => void;
   addItem: (name: string, price: number) => void;
 };
 
-const Modal = ({ sectionName, onClose, addItem }: ModalProps) => {
+const AddItemModal = ({ sectionName, onClose, addItem }: ModalProps) => {
   const [itemName, setItemName] = useState('');
   const [price, setPrice] = useState<string>('');
 
@@ -27,32 +28,34 @@ const Modal = ({ sectionName, onClose, addItem }: ModalProps) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.modalHeader}>Add {sectionName}</Text>
-      <Text>Item Name : </Text>
-      <TextInput
-        style={styles.inputs}
-        placeholder="Enter the item name "
-        value={itemName}
-        onChangeText={setItemName}
-      />
-      <Text>Price : </Text>
-      <TextInput
-        style={styles.inputs}
-        placeholder="enter the price"
-        value={price}
-        onChangeText={setPrice}
-      />
-      <View style={styles.modalBtnContainer}>
-        <Pressable onPress={handleFormInputs}>
-          <Text style={styles.modalAddBtn}>Add</Text>
-        </Pressable>
-        <Pressable onPress={onClose}>
-          <Text style={styles.modalRevoveBtn}>Cancel</Text>
-        </Pressable>
+    <Modal visible={true} animationType="slide" backdropColor={'#F5B301'}>
+      <View style={ModalStyles.container}>
+        <Text style={ModalStyles.modalHeader}>Add {sectionName}</Text>
+        <Text>Item Name : </Text>
+        <TextInput
+          style={ModalStyles.inputs}
+          placeholder="Enter the item name "
+          value={itemName}
+          onChangeText={setItemName}
+        />
+        <Text>Price : </Text>
+        <TextInput
+          style={ModalStyles.inputs}
+          placeholder="enter the price"
+          value={price}
+          onChangeText={setPrice}
+        />
+        <View style={ModalStyles.modalBtnContainer}>
+          <Pressable onPress={handleFormInputs}>
+            <Text style={ModalStyles.modalAddBtn}>Add</Text>
+          </Pressable>
+          <Pressable onPress={onClose}>
+            <Text style={ModalStyles.modalRevoveBtn}>Cancel</Text>
+          </Pressable>
+        </View>
       </View>
-    </View>
+    </Modal>
   );
 };
 
-export default Modal;
+export default AddItemModal;
