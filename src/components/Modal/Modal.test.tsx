@@ -4,12 +4,14 @@ import { Alert } from 'react-native';
 
 describe('Modal test cases', () => {
   jest.spyOn(Alert, 'alert');
+
+  const mockFunction = jest.fn()
   test('it should render the model', () => {
     render(
       <Modal
         sectionName={'Beverages'}
         onClose={function (): void {}}
-        addItem={function (_name: string, _price: number): void {}}
+        addItem={mockFunction}
       />,
     );
     expect(screen.getByText(/Beverages/i)).toBeTruthy();
@@ -18,8 +20,8 @@ describe('Modal test cases', () => {
     render(
       <Modal
         sectionName={'Break fast'}
-        onClose={function (): void {}}
-        addItem={function (_name: string, _price: number): void {}}
+        onClose={mockFunction}
+        addItem={mockFunction}
       />,
     );
     const inputElement1 = screen.getByPlaceholderText('Enter the item name');
@@ -32,8 +34,8 @@ describe('Modal test cases', () => {
     render(
       <Modal
         sectionName={'Beverages'}
-        onClose={function (): void {}}
-        addItem={function (_name: string, _price: number): void {}}
+        onClose={mockFunction}
+        addItem={mockFunction}
       />,
     );
 
