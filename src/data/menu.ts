@@ -1,4 +1,5 @@
-export const CanteenItems = [
+import { MenuSection } from "../types/menu";
+export const CanteenItems :MenuSection[] = [
     {
         FoodType: "Beverages",
         data: [{ Image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnizjjezTC5vQr8VUA_EwaX4YgfDFN5sAg_A&s", Name: "Tea", Price: 20, }, { Image: "https://media.cnn.com/api/v1/images/stellar/prod/150929101049-black-coffee-stock.jpg?q=w_3000,h_3074,x_0,y_0,c_fill", Name: "Coffee", Price: 20, }, { Image: "https://hamul.coop/wp-content/uploads/2020/09/kidmilk2.jpg", Name: "Milk", Price: 80 }]
