@@ -10,7 +10,11 @@ export const TabNavigations = () => {
         initialRouteName="Menu"
         screenOptions={{ animation: 'shift' }}
       >
-        <Tab.Screen name="Menu" component={Canteen} />
+        <Tab.Screen
+          name="Menu"
+          component={Canteen}
+          options={{ headerShown: false }}
+        />
         <Tab.Screen name="Order" component={Order} />
       </Tab.Navigator>
     </NavigationContainer>
