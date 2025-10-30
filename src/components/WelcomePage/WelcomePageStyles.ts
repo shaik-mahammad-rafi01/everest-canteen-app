@@ -32,4 +32,8 @@ export const WelcomeStyles = StyleSheet.create({
     buttonText: {
         fontWeight: 'bold',
     },
+    footerText:{
+        fontSize:20,
+        fontWeight:"600"
+    }
 });
