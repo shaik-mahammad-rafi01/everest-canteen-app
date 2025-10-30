@@ -33,7 +33,7 @@ const Login = () => {
       </View>
 
       <View style={LoginStyles.footerContainer}>
-        <Text style={LoginStyles.footerText}>Don't have an account?</Text>
+        <Text style={LoginStyles.footerText} >Don't have an account?</Text>
         <Pressable>
           <Text style={LoginStyles.signUpText}>SIGN UP</Text>
         </Pressable>
