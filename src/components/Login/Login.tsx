@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { LoginStyles } from './LoginStyles';
 
-const Login = ({route}:any) => {
+const Login = ({route , navigation}:any) => {
     const { role } = route.params;
   return (
     <View style={LoginStyles.container}>
@@ -35,7 +35,7 @@ const Login = ({route}:any) => {
 
       <View style={LoginStyles.footerContainer}>
         <Text style={LoginStyles.footerText} >Don't have an account?</Text>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate('Register')}>
           <Text style={LoginStyles.signUpText}>SIGN UP</Text>
         </Pressable>
       </View>
