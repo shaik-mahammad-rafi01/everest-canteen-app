@@ -2,11 +2,12 @@ import React from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { LoginStyles } from './LoginStyles';
 
-const Login = () => {
+const Login = ({route}:any) => {
+    const { role } = route.params;
   return (
     <View style={LoginStyles.container}>
       <View style={LoginStyles.headerContainer}>
-        <Text style={LoginStyles.headerText}>Sign in your account</Text>
+        <Text style={LoginStyles.headerText}>Sign in as {role ? role : 'Guest'}</Text>
       </View>
 
       <View style={LoginStyles.formContainer}>
