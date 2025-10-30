@@ -35,7 +35,7 @@ const Login = ({route , navigation}:any) => {
 
       <View style={LoginStyles.footerContainer}>
         <Text style={LoginStyles.footerText} >Don't have an account?</Text>
-        <Pressable onPress={() => navigation.navigate('Register')}>
+        <Pressable onPress={() => navigation.navigate('Register',{role})}>
           <Text style={LoginStyles.signUpText}>SIGN UP</Text>
         </Pressable>
       </View>
