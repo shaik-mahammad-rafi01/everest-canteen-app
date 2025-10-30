@@ -17,7 +17,7 @@ describe('CardItem testcases', () => {
     expect(screen.getByText('Cake')).toBeTruthy();
   });
   test('It should call delete funtion after delete item', () => {
-    
+    const Delete = jest.fn();
     render(
       <CardItem
         item={{
@@ -25,14 +25,12 @@ describe('CardItem testcases', () => {
           Price: 40,
           Image: '',
         }}
-        Delete={mockFunction}
+        Delete={Delete}
       />,
     );
     expect(screen.getByText('maggie')).toBeTruthy();
     const removeBtn = screen.getByText('Remove');
     fireEvent.press(removeBtn);
-    expect(mockFunction).toHaveBeenCalledTimes(1)
-    expect(mockFunction).toHaveBeenCalledWith('maggie');
-
+    expect(Delete).toHaveBeenCalledWith('maggie');
   });
 });
