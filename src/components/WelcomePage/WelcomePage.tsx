@@ -19,7 +19,7 @@ const WelcomePage = () => {
       </View>
 
       <View style={WelcomeStyles.footerContainer}>
-        <Text>Welcome to Everest Canteen</Text>
+        <Text style={WelcomeStyles.footerText}>Welcome to Everest Canteen</Text>
       </View>
     </View>
   );
