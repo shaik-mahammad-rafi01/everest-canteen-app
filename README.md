@@ -1,12 +1,19 @@
 # Everest Canteen
 ### Description
-Everest canteen is an React-native based application provides user to select food items from these list of categories Beverages , Breakfast ,Main courses , Snacks and Desserts.
+Everest canteen is an React-native based application provides user to select food items from these list of categories Beverages , Breakfast ,Main courses , Snacks and Desserts And addItem according to the sesction and remove item from the section features are also included.
 
 ### Table of Contents
 - [Description](#description)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Author](#author)
+
 
 ### Features
 - Display the Canteen menu items
+- Add MenuItem to an particular section
+- Remove MenuItem from the particular section
 ### Technologies Used
 - Nodejs
 - React-Native
@@ -22,14 +29,29 @@ cd everest-canteen
 npm install
 ```
 ### 3. Run the Application
+- Start the Metro bundler
+
+```bash
+npm start
+```
 - For Android 
+  - Install and open Android Studio and select an emulator to run your application.
+  - Refer this for setup configuration : https://reactnative.dev/docs/set-up-your-environment?os=macos&platform=android
+
+
 ```bash
 npm run android
 ```
 
-- For IOS
+- For iOS
+  - Install Xcode from the App-store and follow this for setup : https://reactnative.dev/docs/set-up-your-environment
 ```bash
 npm run ios
+```
+### Testing
+
+```bash
+npm test
 ```
 
 ## Author

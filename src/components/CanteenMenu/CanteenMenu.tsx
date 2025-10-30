@@ -1,20 +1,20 @@
 import { Pressable, SectionList, Text, View } from 'react-native';
-import { styles } from '../styles/Canteen';
-import { CanteenItems } from '../data/menu';
-import Header from './Header';
+import { CanteenMenuStyles } from './CanteenMenuStyles';
+import { CanteenItems } from '../../data/menu';
+import Header from '../Header/Header';
 import React, { useState } from 'react';
-import Modal from './Modal';
-import CardItem from './ItemCard';
+import CardItem from '../ItemCard/ItemCard';
+import AddItemModal from '../Modal/Modal';
 
-const Canteen = () => {
+const CanteenMenu = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [presentSection, setPresentSection] = useState('');
   const [canteenItems, setCanteenItems] = useState(CanteenItems);
 
-  const AddItem = (presentSection: string, itemName: string, price: number) => {
+  const AddItem = (SectionName: string, itemName: string, price: number) => {
     setCanteenItems(previousData =>
       previousData.map(section =>
-        section.FoodType === presentSection
+        section.FoodType === SectionName
           ? {
               ...section,
               data: [
@@ -27,10 +27,10 @@ const Canteen = () => {
     );
     setIsModalOpen(false);
   };
-  const DeleteItem = (presentSection: string, itemName: string) => {
+  const DeleteItem = (SectionName: string, itemName: string) => {
     setCanteenItems(previousData =>
       previousData.map(section =>
-        section.FoodType === presentSection
+        section.FoodType === SectionName
           ? {
               ...section,
               data: section.data.filter(item => item.Name !== itemName),
@@ -49,15 +49,15 @@ const Canteen = () => {
         renderItem={({ item, section }) => (
           <CardItem
             item={item}
-            Delete={itemName => DeleteItem(section.FoodType, itemName)}
+            Delete={(itemName: string) => DeleteItem(section.FoodType, itemName)}
           />
         )}
         renderSectionHeader={({ section: { FoodType, data } }) => (
-          <View style={styles.header}>
+          <View style={CanteenMenuStyles.header}>
             <Text>{FoodType}</Text>
             <Text>{data.length}</Text>
             <Pressable
-              style={styles.AddBtn}
+              style={CanteenMenuStyles.AddBtn}
               onPress={() => {
                 setPresentSection(FoodType);
                 setIsModalOpen(true);
@@ -69,8 +69,8 @@ const Canteen = () => {
         )}
       />
       {isModalOpen && (
-        <View style={{ position: 'absolute' }}>
-          <Modal
+        <View style={CanteenMenuStyles.modalViewContainer}>
+          <AddItemModal
             sectionName={presentSection}
             onClose={() => setIsModalOpen(false)}
             addItem={(name: string, price: number) =>
@@ -83,4 +83,4 @@ const Canteen = () => {
   );
 };
 
-export default Canteen;
+export default CanteenMenu;
