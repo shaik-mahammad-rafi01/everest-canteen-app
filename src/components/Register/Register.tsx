@@ -34,7 +34,7 @@ const Register = ({route, navigation}:any) => {
             />
     
             <Pressable style={RegisterStyles.signInButton}>
-              <Text style={RegisterStyles.signInText}>SIGN IN</Text>
+              <Text style={RegisterStyles.signInText}>SIGN UP</Text>
             </Pressable>
     
             <Text style={RegisterStyles.orText}>or sign in with</Text>
