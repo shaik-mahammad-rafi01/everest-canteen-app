@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, Pressable, Text, TextInput, View } from 'react-native';
 import { LoginStyles } from './LoginStyles';
+import { admin } from '../../data/Admin';
 
 const Login = ({ route, navigation }: any) => {
   const { role } = route.params;
@@ -12,8 +13,15 @@ const Login = ({ route, navigation }: any) => {
       Alert.alert('Please fill username and password');
       return;
     }
-    Alert.alert('Success', `Logged in as ${role}`);
-    navigation.navigate('Menu');
+    if (role === 'Admin') {
+      if (username === admin.UserName && password === admin.Password) {
+        Alert.alert('Success', `Logged in as ${role}`);
+        navigation.navigate('Menu');
+      } else {
+        Alert.alert('Invalid Admin');
+        return;
+      }
+    }
   };
 
   return (
@@ -47,16 +55,17 @@ const Login = ({ route, navigation }: any) => {
         <Pressable style={LoginStyles.signInButton} onPress={handleLogin}>
           <Text style={LoginStyles.signInText}>SIGN IN</Text>
         </Pressable>
-
-        <Text style={LoginStyles.orText}>or sign in with</Text>
       </View>
 
-      <View style={LoginStyles.footerContainer}>
-        <Text style={LoginStyles.footerText}>Don't have an account?</Text>
-        <Pressable onPress={() => navigation.navigate('Register', { role })}>
-          <Text style={LoginStyles.signUpText}>SIGN UP</Text>
-        </Pressable>
-      </View>
+      {role !== 'Admin' && (
+        <View style={LoginStyles.footerContainer}>
+          <Text style={LoginStyles.orText}>or sign in with</Text>
+          <Text style={LoginStyles.footerText}>Don't have an account?</Text>
+          <Pressable onPress={() => navigation.navigate('Register', { role })}>
+            <Text style={LoginStyles.signUpText}>SIGN UP</Text>
+          </Pressable>
+        </View>
+      )}
     </View>
   );
 };
