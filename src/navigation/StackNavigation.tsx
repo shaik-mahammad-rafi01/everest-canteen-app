@@ -1,18 +1,19 @@
 import { NavigationContainer } from '@react-navigation/native';
-
 import WelcomePage from '../components/WelcomePage/WelcomePage';
 import Login from '../components/Login/Login';
 import { createStackNavigator } from '@react-navigation/stack';
 import Register from '../components/Register/Register';
+import { TabNavigations } from './TabNavigation';
 
 const StackNavigaton = () => {
   const Stack = createStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown:false}}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="home" component={WelcomePage} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Menu" component={TabNavigations} />
       </Stack.Navigator>
     </NavigationContainer>
   );

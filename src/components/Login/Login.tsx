@@ -1,13 +1,27 @@
-import React from 'react';
-import { Pressable, Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { Alert, Pressable, Text, TextInput, View } from 'react-native';
 import { LoginStyles } from './LoginStyles';
 
-const Login = ({route , navigation}:any) => {
-    const { role } = route.params;
+const Login = ({ route, navigation }: any) => {
+  const { role } = route.params;
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    if (!username || !password) {
+      Alert.alert('Please fill username and password');
+      return;
+    }
+    Alert.alert('Success', `Logged in as ${role}`);
+    navigation.navigate('Menu');
+  };
+
   return (
     <View style={LoginStyles.container}>
       <View style={LoginStyles.headerContainer}>
-        <Text style={LoginStyles.headerText}>Sign in as {role ? role : 'Guest'}</Text>
+        <Text style={LoginStyles.headerText}>
+          Sign in as {role ? role : 'Guest'}
+        </Text>
       </View>
 
       <View style={LoginStyles.formContainer}>
@@ -16,6 +30,8 @@ const Login = ({route , navigation}:any) => {
           style={LoginStyles.input}
           placeholder="Enter your name"
           placeholderTextColor="#aaa"
+          value={username}
+          onChangeText={setUsername}
         />
 
         <Text style={LoginStyles.label}>Password</Text>
@@ -24,9 +40,11 @@ const Login = ({route , navigation}:any) => {
           placeholder="Enter your password"
           placeholderTextColor="#aaa"
           secureTextEntry
+          value={password}
+          onChangeText={setPassword}
         />
 
-        <Pressable style={LoginStyles.signInButton}>
+        <Pressable style={LoginStyles.signInButton} onPress={handleLogin}>
           <Text style={LoginStyles.signInText}>SIGN IN</Text>
         </Pressable>
 
@@ -34,8 +52,8 @@ const Login = ({route , navigation}:any) => {
       </View>
 
       <View style={LoginStyles.footerContainer}>
-        <Text style={LoginStyles.footerText} >Don't have an account?</Text>
-        <Pressable onPress={() => navigation.navigate('Register',{role})}>
+        <Text style={LoginStyles.footerText}>Don't have an account?</Text>
+        <Pressable onPress={() => navigation.navigate('Register', { role })}>
           <Text style={LoginStyles.signUpText}>SIGN UP</Text>
         </Pressable>
       </View>
