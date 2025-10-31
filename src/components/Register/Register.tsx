@@ -1,9 +1,24 @@
-import React from 'react';
-import { Pressable, Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { Alert, Pressable, Text, TextInput, View } from 'react-native';
 import { RegisterStyles } from './RegisterStyles';
 
 const Register = ({route, navigation}:any) => {
     const { role } = route.params || {};
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const handleSignUp = ()=>{
+    if (!username || !password || !confirmPassword) {
+      Alert.alert("Please fill all fields");
+      return;
+    }
+    if (password !== confirmPassword) {
+      Alert.alert("Passwords do not match");
+      return;
+    }
+    Alert.alert('Success', `Account created for ${role || 'Guest'}!`);
+    navigation.navigate('Login', { role });
+    }
   return (
         <View style={RegisterStyles.container}>
           <View style={RegisterStyles.headerContainer}>
@@ -16,6 +31,8 @@ const Register = ({route, navigation}:any) => {
               style={RegisterStyles.input}
               placeholder="Enter your name"
               placeholderTextColor="#aaa"
+              value={username}
+              onChangeText={setUsername}
             />
     
             <Text style={RegisterStyles.label}>Password</Text>
@@ -24,6 +41,8 @@ const Register = ({route, navigation}:any) => {
               placeholder="Enter your password"
               placeholderTextColor="#aaa"
               secureTextEntry
+              value={password}
+              onChangeText={setPassword}
             />
             <Text style={RegisterStyles.label}>Confirm password</Text>
             <TextInput
@@ -31,9 +50,11 @@ const Register = ({route, navigation}:any) => {
               placeholder="Confirm your password"
               placeholderTextColor="#aaa"
               secureTextEntry
+              value={confirmPassword}
+              onChangeText={setConfirmPassword}
             />
     
-            <Pressable style={RegisterStyles.signInButton}>
+            <Pressable style={RegisterStyles.signInButton} onPress={handleSignUp}>
               <Text style={RegisterStyles.signInText}>SIGN UP</Text>
             </Pressable>
     
