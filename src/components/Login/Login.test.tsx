@@ -23,4 +23,11 @@ describe("Login page test cases" , ()=>{
     fireEvent.press(button)
     expect(mockAlert).toHaveBeenCalledWith("Please fill username and password")
   })
+  test("It should redirect admin page after successful login " , ()=>{
+    render(<Login route={mockRoute('Admin')} navigation={{ navigate: mockNavigate }} />);
+    fireEvent.changeText(screen.getByPlaceholderText('Enter your name'), 'Ramesh');
+    fireEvent.changeText(screen.getByPlaceholderText('Enter your password'), 'ramesh123');
+    fireEvent.press(screen.getByText("SIGN IN"));
+    expect(mockNavigate).toHaveBeenCalledWith('Menu', { role: 'Admin' });
+  })
 })
