@@ -15,4 +15,10 @@ describe('WelcomePage test cases', () => {
     fireEvent.press(button);
     expect(navigation.navigate).toHaveBeenCalledWith("Login" , {role : "User"});
   })
+    test("it should redirect admin login after clicking Login as admin " , ()=>{
+    render(<WelcomePage route={route} navigation={navigation}/>)
+    const button  = screen.getByText("LOGIN AS ADMIN");
+    fireEvent.press(button);
+    expect(navigation.navigate).toHaveBeenCalledWith("Login" , {role : "Admin"});
+  })
 });
