@@ -30,4 +30,12 @@ describe("Login page test cases" , ()=>{
     fireEvent.press(screen.getByText("SIGN IN"));
     expect(mockNavigate).toHaveBeenCalledWith('Menu', { role: 'Admin' });
   })
+
+    test("It should redirect user page after successful login " , ()=>{
+    render(<Login route={mockRoute('User')} navigation={{ navigate: mockNavigate }} />);
+    fireEvent.changeText(screen.getByPlaceholderText('Enter your name'), 'Rafi');
+    fireEvent.changeText(screen.getByPlaceholderText('Enter your password'), 'rafi123');
+    fireEvent.press(screen.getByText("SIGN IN"));
+    expect(mockNavigate).toHaveBeenCalledWith('User-Menu', { role: 'User' });
+  })
 })
