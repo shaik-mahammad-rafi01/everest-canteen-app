@@ -27,4 +27,10 @@ describe('Register page test cases', () => {
         expect(navigation.navigate).toHaveBeenCalledWith("Login" , {role : "User"})
         expect(screen.getByText("SIGN IN")).toBeTruthy();
   });
+  test("it should navigate to Login by clicking SIGN IN" , ()=>{
+    render(<Register route={route} navigation={navigation}/>)
+    const button = screen.getByText("SIGN IN")
+    fireEvent.press(button)
+    expect(navigation.navigate).toHaveBeenLastCalledWith("Login" , {role : "User"})
+  })
 });
