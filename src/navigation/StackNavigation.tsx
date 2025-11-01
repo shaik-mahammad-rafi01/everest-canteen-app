@@ -4,6 +4,7 @@ import Login from '../components/Login/Login';
 import { createStackNavigator } from '@react-navigation/stack';
 import Register from '../components/Register/Register';
 import { TabNavigations } from './TabNavigation';
+import { UserMenuTabNavigations } from './UserMenuTabNavigation';
 
 const StackNavigaton = () => {
   const Stack = createStackNavigator();
@@ -14,6 +15,7 @@ const StackNavigaton = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Menu" component={TabNavigations} />
+        <Stack.Screen name="User-Menu" component={UserMenuTabNavigations} />
       </Stack.Navigator>
     </NavigationContainer>
   );

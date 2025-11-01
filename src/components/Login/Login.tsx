@@ -16,11 +16,13 @@ const Login = ({ route, navigation }: any) => {
     if (role === 'Admin') {
       if (username === admin.UserName && password === admin.Password) {
         Alert.alert('Success', `Logged in as ${role}`);
-        navigation.navigate('Menu');
+        navigation.navigate('Menu' ,{role : 'Admin'});
       } else {
         Alert.alert('Invalid Admin');
         return;
       }
+    }else{
+        navigation.navigate('User-Menu',{role :'User'})
     }
   };
 
