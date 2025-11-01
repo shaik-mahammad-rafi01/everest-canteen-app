@@ -5,9 +5,10 @@ import { ItemsCardStyles } from './ItemCardStyles';
 type CardItemProps = {
   item: { Name: string; Price: number; Image: string };
   Delete: (itemName: string) => void
+  role : string
 };
 
-const CardItem = ({ item, Delete }: CardItemProps) => {
+const CardItem = ({ item, Delete ,role}: CardItemProps) => {
   
   return (
     <View style={ItemsCardStyles.mainContainer}>
@@ -22,9 +23,15 @@ const CardItem = ({ item, Delete }: CardItemProps) => {
           </View>
 
           <View>
+            {role === 'User' ? 
+            <Pressable onPress={()=>Delete(item.Name)}>
+              <Text style={ItemsCardStyles.RemoveBtn}>Add</Text>
+            </Pressable> : 
             <Pressable onPress={()=>Delete(item.Name)}>
               <Text style={ItemsCardStyles.RemoveBtn}>Remove</Text>
             </Pressable>
+            }
+            
           </View>
         </View>
       </View>
