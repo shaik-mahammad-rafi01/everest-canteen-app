@@ -1,7 +1,6 @@
-import { TabNavigations } from './src/navigation/tabNavigation';
-
+import StackNavigaton from './src/navigation/StackNavigation';
 function App() {
-  return <TabNavigations />;
+  return <StackNavigaton />;
 }
 
 export default App;

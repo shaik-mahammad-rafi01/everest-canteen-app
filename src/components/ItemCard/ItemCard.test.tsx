@@ -11,8 +11,7 @@ describe('CardItem testcases', () => {
           Price: 20,
           Image: '',
         }}
-        Delete={mockFunction}
-      />,
+        Delete={mockFunction} role={'Admin'} />,
     );
     expect(screen.getByText('Cake')).toBeTruthy();
   });
@@ -25,8 +24,7 @@ describe('CardItem testcases', () => {
           Price: 40,
           Image: '',
         }}
-        Delete={Delete}
-      />,
+        Delete={Delete} role={'Admin'} />,
     );
     expect(screen.getByText('maggie')).toBeTruthy();
     const removeBtn = screen.getByText('Remove');

@@ -49,8 +49,7 @@ const CanteenMenu = () => {
         renderItem={({ item, section }) => (
           <CardItem
             item={item}
-            Delete={(itemName: string) => DeleteItem(section.FoodType, itemName)}
-          />
+            Delete={(itemName: string) => DeleteItem(section.FoodType, itemName)} role={''}          />
         )}
         renderSectionHeader={({ section: { FoodType, data } }) => (
           <View style={CanteenMenuStyles.header}>
