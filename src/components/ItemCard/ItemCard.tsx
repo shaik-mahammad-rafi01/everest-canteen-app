@@ -24,7 +24,7 @@ const CardItem = ({ item, Delete ,role}: CardItemProps) => {
 
           <View>
             {role === 'User' ? 
-            <Pressable onPress={()=>Delete(item.Name)}>
+            <Pressable>
               <Text style={ItemsCardStyles.RemoveBtn}>Add</Text>
             </Pressable> : 
             <Pressable onPress={()=>Delete(item.Name)}>
