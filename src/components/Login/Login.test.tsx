@@ -2,9 +2,12 @@ import { render , screen} from "@testing-library/react-native";
 import Login from "./Login";
 
 describe("Login page test cases" , ()=>{
-    test("it should render Login page properly" , ()=>{
-        render(<Login />)
-        const loginText = screen.getByText("Sign in your account")
-        expect(loginText).toBeTruthy()
-    })
+  const mockNavigate = jest.fn();
+  const mockRoute = (role = 'Admin') => ({ params: { role } });
+
+  test('it should render login screen with role text', () => {
+    render(<Login route={mockRoute('User')} navigation={{ navigate: mockNavigate }} />);
+    expect(screen.getByText('Sign in as User')).toBeTruthy();
+  });
+
 })
