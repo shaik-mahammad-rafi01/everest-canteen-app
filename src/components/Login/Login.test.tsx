@@ -10,4 +10,8 @@ describe("Login page test cases" , ()=>{
     expect(screen.getByText('Sign in as User')).toBeTruthy();
   });
 
+  test("it should render the admin page" , ()=>{
+        render(<Login route={mockRoute('Admin')} navigation={{ navigate: mockNavigate }} />);
+    expect(screen.getByText('Sign in as Admin')).toBeTruthy();
+  })
 })
