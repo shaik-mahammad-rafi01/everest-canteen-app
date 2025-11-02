@@ -11,6 +11,10 @@ export interface MenuSection {
 }
 
 export interface Admin {
-    UserName : string,
-    Password : string
+    UserName: string,
+    Password: string
 }
+export type User = {
+    userName: string;
+    password: string
+};
