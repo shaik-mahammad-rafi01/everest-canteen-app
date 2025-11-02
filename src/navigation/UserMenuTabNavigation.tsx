@@ -1,16 +1,16 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Order from '../components/Order/Order';
-import CanteenMenu from '../components/CanteenMenu/CanteenMenu';
+import UserMenu from '../components/UserMenu/UserMenu';
 const Tab = createBottomTabNavigator();
-export const TabNavigations = () => {
+export const UserMenuTabNavigations = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Canteen Menu"
+      
       screenOptions={{ animation: 'shift' }}
     >
       <Tab.Screen
-        name="Canteen Menu"
-        component={CanteenMenu}
+        name="UserMenu"
+        component={UserMenu}
         options={{ headerShown: false }}
       />
       <Tab.Screen name="Order" component={Order} />

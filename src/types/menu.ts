@@ -9,3 +9,12 @@ export interface MenuSection {
     FoodType: string,
     data: MenuItem[]
 }
+
+export interface Admin {
+    UserName: string,
+    Password: string
+}
+export type User = {
+    userName: string;
+    password: string
+};
