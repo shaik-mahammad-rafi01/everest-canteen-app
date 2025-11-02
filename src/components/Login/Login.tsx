@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Alert, Pressable, Text, TextInput, View } from 'react-native';
 import { LoginStyles } from './LoginStyles';
 import { admin } from '../../data/Admin';
+import { User } from '../../types/menu';
 
 const Login = ({ route, navigation }: any) => {
   const { role } = route.params;
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!username || !password) {
       Alert.alert('Please fill username and password');
       return;
@@ -16,13 +17,26 @@ const Login = ({ route, navigation }: any) => {
     if (role === 'Admin') {
       if (username === admin.UserName && password === admin.Password) {
         Alert.alert('Success', `Logged in as ${role}`);
-        navigation.navigate('Menu' ,{role : 'Admin'});
+        navigation.navigate('Menu', { role: 'Admin' });
       } else {
-        Alert.alert('Invalid Admin');
+        Alert.alert("Failed" , 'Invalid Admin');
         return;
       }
-    }else{
-        navigation.navigate('User-Menu',{role :'User'})
+    } else {
+      const responce = await fetch('http://localhost:3000/users');
+      const allUsers = await responce.json();
+
+      const existUser = allUsers.find(
+        (user: User) =>
+          user.userName === username && user.password === password,
+      );
+
+      if (existUser) {
+        Alert.alert('Success', `Welcome ${username}`);
+        navigation.navigate('User-Menu', { role: 'User' });
+      } else {
+        Alert.alert('Invalid credentials');
+      }
     }
   };
 
