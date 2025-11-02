@@ -7,7 +7,7 @@ const Register = ({route, navigation}:any) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const handleSignUp = ()=>{
+    const handleSignUp = async ()=>{
     if (!username || !password || !confirmPassword) {
       Alert.alert("Please fill all fields");
       return;
@@ -16,8 +16,22 @@ const Register = ({route, navigation}:any) => {
       Alert.alert("Passwords do not match");
       return;
     }
-    Alert.alert('Success', `Account created for ${role || 'Guest'}!`);
-    navigation.navigate('Login', { role });
+    try{
+      const AllUserResponce = await fetch("http://localhost:3000/users" , {
+        method:'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userName: username, password }),
+      });
+
+      if(AllUserResponce.ok){
+        Alert.alert('Success', `Account created for ${role || 'Guest'}!`);
+        navigation.navigate('Login', { role });
+      }
+    }
+    catch(error){
+      console.log(error)
+      Alert.alert("Failed to register");
+    }
     }
   return (
         <View style={RegisterStyles.container}>
