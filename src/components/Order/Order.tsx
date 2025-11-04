@@ -16,22 +16,20 @@ const Order = () => {
   useEffect(() => {
     getOrders();
     
-  },[]);
+  },[orders]);
 
   return (
     <View>
-      <View>
-        <Text>Order</Text>
-      </View>
       <View>
         <FlatList
           data={orders}
          
           renderItem={({ item }) => (
             <View style={OrderStyles.itemContainer}>
-              <Text style = {OrderStyles.name}>{item.name}</Text>
-              <Text>{item.price}</Text>
               <Image style={OrderStyles.image} source={{ uri: item.image }} />
+              <Text style = {OrderStyles.name}>{item.name}</Text>
+              <Text>Rs . {item.price}</Text>
+              
             </View>
             
           )}
