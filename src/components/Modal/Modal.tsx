@@ -6,7 +6,7 @@ import { ModalStyles } from './ModalStyles';
 type ModalProps = {
   sectionName: string;
   onClose: () => void;
-  addItem: (name: string, price: number) => void;
+  addItem: (name: string, price: number , id:number ) => void;
 };
 
 const AddItemModal = ({ sectionName, onClose, addItem }: ModalProps) => {
@@ -14,7 +14,7 @@ const AddItemModal = ({ sectionName, onClose, addItem }: ModalProps) => {
   const [price, setPrice] = useState<string>('');
 
   const handleFormInputs = () => {
-    if (!itemName || !price) {
+    if (!itemName || !price ) {
       Alert.alert('fill all fields');
       return;
     }
@@ -24,7 +24,8 @@ const AddItemModal = ({ sectionName, onClose, addItem }: ModalProps) => {
       Alert.alert('invalid price');
       return;
     }
-    addItem(itemName, NumPrice);
+    const id = Date.now();
+    addItem(itemName, NumPrice  , id );
   };
 
   return (

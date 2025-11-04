@@ -19,7 +19,7 @@ const CanteenMenu = () => {
               ...section,
               data: [
                 ...section.data,
-                { Name: itemName, Price: price, Image: '' },
+                { name: itemName, price: price, image: '', id :Date.now() },
               ],
             }
           : section,
@@ -33,7 +33,7 @@ const CanteenMenu = () => {
         section.FoodType === SectionName
           ? {
               ...section,
-              data: section.data.filter(item => item.Name !== itemName),
+              data: section.data.filter(item => item.name !== itemName),
             }
           : section,
       ),
@@ -45,11 +45,15 @@ const CanteenMenu = () => {
       <Header />
       <SectionList
         sections={canteenItems}
-        keyExtractor={(item, index) => item.Name + index}
+        keyExtractor={(item, index) => item.name + index}
         renderItem={({ item, section }) => (
           <CardItem
             item={item}
-            Delete={(itemName: string) => DeleteItem(section.FoodType, itemName)} role={''}          />
+            Delete={(itemName: string) =>
+              DeleteItem(section.FoodType, itemName)
+            }
+            role={''}
+          />
         )}
         renderSectionHeader={({ section: { FoodType, data } }) => (
           <View style={CanteenMenuStyles.header}>
