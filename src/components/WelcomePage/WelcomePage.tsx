@@ -1,6 +1,7 @@
 import React from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { WelcomeStyles } from './WelcomePageStyles';
+import Button from '../Button/Button';
 
 const WelcomePage = () => {
   return (
@@ -10,12 +11,8 @@ const WelcomePage = () => {
       </View>
 
       <View style={WelcomeStyles.buttonsContainer}>
-        <Pressable style={WelcomeStyles.button}>
-          <Text style={WelcomeStyles.buttonText}>LOGIN AS USER</Text>
-        </Pressable>
-        <Pressable style={WelcomeStyles.button}>
-          <Text style={WelcomeStyles.buttonText}>LOGIN AS ADMIN</Text>
-        </Pressable>
+        <Button title='LOGIN AS USER'/>
+        <Button title='LOGIN AS ADMIN'/> 
       </View>
 
       <View style={WelcomeStyles.footerContainer}>
