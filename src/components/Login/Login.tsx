@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, Pressable, Text, TextInput, View } from 'react-native';
 import { LoginStyles } from './LoginStyles';
-import { admin } from '../../data/Admin';
-import { User } from '../../types/menu';
+import { Admin, User } from '../../types/menu';
 
 const Login = ({ route, navigation }: any) => {
   const { role } = route.params;
@@ -15,12 +14,15 @@ const Login = ({ route, navigation }: any) => {
       return;
     }
     if (role === 'Admin') {
-      if (username === admin.UserName && password === admin.Password) {
-        Alert.alert('Success', `Logged in as ${role}`);
-        navigation.navigate('Menu', { role: 'Admin' });
-      } else {
-        Alert.alert("Failed" , 'Invalid Admin');
-        return;
+      const response = await fetch("http://localhost:3000/getAdmin");
+      const Admins = await response.json();
+      const existAdmin = Admins.find((admin: Admin) => admin.name === username && admin.password === password);
+      if(existAdmin){
+        Alert.alert("Success" , "Admin login successful")
+        navigation.navigate("Menu" ,{role : "Admin"} )
+      }
+      else{
+        Alert.alert("Invalid Credentials")
       }
     } else {
       const responce = await fetch('http://localhost:3000/users');
