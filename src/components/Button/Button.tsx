@@ -5,6 +5,7 @@ import { ButtonStyles } from './ButtonStyles';
 interface buttonProps {
   title: string;
   onPress: () => void;
+  style ? : object;
 }
 
 const Button = ({title , onPress} : buttonProps) => {

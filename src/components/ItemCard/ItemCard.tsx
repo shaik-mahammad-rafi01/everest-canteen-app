@@ -1,14 +1,15 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { ItemsCardStyles } from './ItemCardStyles';
+import Button from '../Button/Button';
 
 type CardItemProps = {
   item: { Name: string; Price: number; Image: string };
-  Delete: (itemName: string) => void
+  onDelete: (itemName: string) => void
   role : string
 };
 
-const CardItem = ({ item, Delete ,role}: CardItemProps) => {
+const CardItem = ({ item, onDelete ,role}: CardItemProps) => {
   
   return (
     <View style={ItemsCardStyles.mainContainer}>
@@ -24,12 +25,9 @@ const CardItem = ({ item, Delete ,role}: CardItemProps) => {
 
           <View>
             {role === 'User' ? 
-            <Pressable>
-              <Text style={ItemsCardStyles.RemoveBtn}>Add</Text>
-            </Pressable> : 
-            <Pressable onPress={()=>Delete(item.Name)}>
-              <Text style={ItemsCardStyles.RemoveBtn}>Remove</Text>
-            </Pressable>
+            <Button title="Add" onPress={()=> {} } />
+             : 
+            <Button title="Remove" onPress={()=>onDelete(item.Name)} style={ItemsCardStyles.RemoveBtn}/> 
             }
             
           </View>
