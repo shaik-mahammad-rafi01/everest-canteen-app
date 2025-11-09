@@ -27,7 +27,7 @@ const CanteenMenu = () => {
     );
     setIsModalOpen(false);
   };
-  const DeleteItem = (SectionName: string, itemName: string) => {
+  const handleDeleteItem = (SectionName: string, itemName: string) => {
     setCanteenItems(previousData =>
       previousData.map(section =>
         section.FoodType === SectionName
@@ -49,7 +49,11 @@ const CanteenMenu = () => {
         renderItem={({ item, section }) => (
           <CardItem
             item={item}
-            Delete={(itemName: string) => DeleteItem(section.FoodType, itemName)} role={''}          />
+            onDelete={(itemName: string) =>
+              handleDeleteItem(section.FoodType, itemName)
+            }
+            role={''}
+          />
         )}
         renderSectionHeader={({ section: { FoodType, data } }) => (
           <View style={CanteenMenuStyles.header}>
