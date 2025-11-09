@@ -23,6 +23,13 @@ export const HeaderStyles = StyleSheet.create({
         flexDirection: 'row',
         gap: 10,
         padding: 2,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent:'space-around'
+        
+    },
+    logoutBtn:{
+        borderWidth:1,
+        padding:5,
+        borderRadius:5,
     }
 })

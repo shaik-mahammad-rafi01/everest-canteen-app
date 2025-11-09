@@ -1,10 +1,10 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import { Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { HeaderStyles } from './HeaderStyles';
 
-const Header = () => {
+const Header = ({navigation} : any) => {
   return (
     <SafeAreaView>
       <View style={HeaderStyles.headerContainer}>
@@ -13,6 +13,11 @@ const Header = () => {
         </View>
         <View style={HeaderStyles.headingContainer}>
           <Text style={HeaderStyles.heading}>Everest Canteen 🍲</Text>
+        </View>
+        <View style = {HeaderStyles.logoutBtn}>
+          <Pressable onPress={()=>navigation.navigate("home")}>
+            <Text>Logout</Text>
+          </Pressable>
         </View>
       </View>
     </SafeAreaView>

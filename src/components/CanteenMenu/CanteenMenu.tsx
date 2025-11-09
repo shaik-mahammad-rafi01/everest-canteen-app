@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import CardItem from '../ItemCard/ItemCard';
 import AddItemModal from '../Modal/Modal';
 
-const CanteenMenu = () => {
+const CanteenMenu = ({navigation} : any) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [presentSection, setPresentSection] = useState('');
   const [canteenItems, setCanteenItems] = useState(CanteenItems);
@@ -42,7 +42,7 @@ const CanteenMenu = () => {
 
   return (
     <View>
-      <Header />
+      <Header navigation = {navigation}/>
       <SectionList
         sections={canteenItems}
         keyExtractor={(item, index) => item.name + index}
