@@ -1,8 +1,9 @@
 import React from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { WelcomeStyles } from './WelcomePageStyles';
+import Button from '../Button/Button';
 
-const WelcomePage = ({navigation}:any) => {
+const WelcomePage = () => {
   return (
     <View style={WelcomeStyles.mainContainer}>
       <View style={WelcomeStyles.titleContainer}>
@@ -10,12 +11,8 @@ const WelcomePage = ({navigation}:any) => {
       </View>
 
       <View style={WelcomeStyles.buttonsContainer}>
-        <Pressable style={WelcomeStyles.button} onPress={()=>navigation.navigate('Login',{role : 'User'})}>
-          <Text style={WelcomeStyles.buttonText}>LOGIN AS USER</Text>
-        </Pressable >
-        <Pressable style={WelcomeStyles.button} onPress={()=>navigation.navigate('Login',{role : 'Admin'})}>
-          <Text style={WelcomeStyles.buttonText} >LOGIN AS ADMIN</Text>
-        </Pressable>
+        <Button title='LOGIN AS USER'/>
+        <Button title='LOGIN AS ADMIN'/> 
       </View>
 
       <View style={WelcomeStyles.footerContainer}>
