@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { WelcomeStyles } from './WelcomePageStyles';
 import Button from '../Button/Button';
 
-const WelcomePage = () => {
+const WelcomePage = ({navigation} : any) => {
   return (
     <View style={WelcomeStyles.mainContainer}>
       <View style={WelcomeStyles.titleContainer}>
@@ -11,8 +11,8 @@ const WelcomePage = () => {
       </View>
 
       <View style={WelcomeStyles.buttonsContainer}>
-        <Button title='LOGIN AS USER'/>
-        <Button title='LOGIN AS ADMIN'/> 
+        <Button title='LOGIN AS USER' onPress = {()=>navigation.navigate('Login' , {role : 'User'})}/>
+        <Button title='LOGIN AS ADMIN'onPress = {()=> navigation.navigate('Login' , {role : 'Admin'})}/> 
       </View>
 
       <View style={WelcomeStyles.footerContainer}>
