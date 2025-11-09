@@ -16,7 +16,7 @@ const UserMenu = () => {
         <SectionList
           sections={canteenItems}
           keyExtractor={(item, index) => item.Name + index}
-          renderItem={({ item }) => <CardItem item={item} Delete={() => ''} role={'User'} />}
+          renderItem={({ item }) => <CardItem item={item} onDelete={() => ''} role={'User'} />}
           renderSectionHeader={({ section: { FoodType, data } }) => (
             <View style={CanteenMenuStyles.header}>
               <Text>{FoodType}</Text>

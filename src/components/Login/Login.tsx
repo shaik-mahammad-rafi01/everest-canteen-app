@@ -14,7 +14,7 @@ const Login = ({ route, navigation }: any) => {
       return;
     }
     if (role === 'Admin') {
-      if (username === admin.UserName && password === admin.Password) {
+      if (username === admin.userName && password === admin.Password) {
         Alert.alert('Success', `Logged in as ${role}`);
         navigation.navigate('Menu' ,{role : 'Admin'});
       } else {

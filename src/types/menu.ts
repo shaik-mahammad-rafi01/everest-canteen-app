@@ -11,6 +11,6 @@ export interface MenuSection {
 }
 
 export interface Admin {
-    UserName : string,
+    userName : string,
     Password : string
 }

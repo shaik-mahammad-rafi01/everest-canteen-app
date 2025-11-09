@@ -1,6 +1,6 @@
 import { Admin } from "../types/menu";
 
 export const admin : Admin = {
-    UserName: "Ramesh",
+    userName: "Ramesh",
     Password: "ramesh123"
 }
