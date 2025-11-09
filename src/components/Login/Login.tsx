@@ -25,13 +25,10 @@ const Login = ({ route, navigation }: any) => {
         navigation.navigate('User-Menu',{role :'User'})
     }
   };
-
   return (
     <View style={LoginStyles.container}>
       <View style={LoginStyles.headerContainer}>
-        <Text style={LoginStyles.headerText}>
-          Sign in as {role ? role : 'Guest'}
-        </Text>
+        <Text style={LoginStyles.headerText}>Sign in as {role ? role : 'Guest'}</Text>
       </View>
 
       <View style={LoginStyles.formContainer}>
