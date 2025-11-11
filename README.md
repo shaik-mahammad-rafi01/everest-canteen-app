@@ -18,6 +18,7 @@ Everest canteen is an React-native based application provides user to select foo
 - Registration and Login pages according to the Role
 - Stoting User Registration credentials to firebase database
 - Verifing Login with database and redirection to menu screen
+- Select and Update the Profile image 
 ### Technologies Used
 - Nodejs
 - React-Native
