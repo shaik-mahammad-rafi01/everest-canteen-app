@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, SectionList, Text, Pressable } from 'react-native';
+import { View, SectionList, Text, Pressable,} from 'react-native';
 import { CanteenMenuStyles } from '../CanteenMenu/CanteenMenuStyles';
 import CardItem from '../ItemCard/ItemCard';
 import { CanteenItems } from '../../data/menu';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { UserStyles } from './UserStyles';
+import ProfileImage from '../ProfileImage/ProfileImage';
 
 const UserMenu = ({ navigation }: any) => {
   const [canteenItems] = useState(CanteenItems);
@@ -13,6 +14,9 @@ const UserMenu = ({ navigation }: any) => {
     <SafeAreaView>
       <View >
         <View style={UserStyles.container}>
+          <View>
+            <ProfileImage />
+          </View>
         <View>
           <Text style={UserStyles.Header}>Our Menu</Text>
         </View>
