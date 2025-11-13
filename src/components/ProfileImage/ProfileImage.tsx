@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, Platform, View } from 'react-native';
+import { Alert, Image, Platform, View } from 'react-native';
 import { Pressable } from 'react-native-gesture-handler';
 import { PERMISSIONS, request, RESULTS } from 'react-native-permissions';
 import { ProfileImageStyles } from './ProfileImageStyles';
@@ -19,22 +19,38 @@ export const ProfileImage = () => {
 
     try {
       const result = await request(permission);
+      const options: ImageLibraryOptions = {
+        mediaType: 'photo',
+        quality: 1,
+      };
 
-      if (result === RESULTS.GRANTED) {
-        console.log('Access granted');
+      switch (result) {
+        case RESULTS.GRANTED:
+          const response = await launchImageLibrary(options);
+          if (!response.didCancel && response.assets) {
+            const MyNewProfileImage = response.assets[0].uri;
+            setImage(MyNewProfileImage);
+          }
+          break;
 
-        const options: ImageLibraryOptions = {
-          mediaType: 'photo',
-          quality: 1,
-        };
-        const response = await launchImageLibrary(options);
+        case RESULTS.LIMITED:
+          const Response = await launchImageLibrary(options);
+          if (!Response.didCancel && Response.assets) {
+            const MyNewProfileImage = Response.assets[0].uri;
+            setImage(MyNewProfileImage);
+          }
+          break;
 
-        if (!response.didCancel && response.assets) {
-          const myNewImg = response.assets[0].uri;
-          setImage(myNewImg);
-        }
-      } else if (result === RESULTS.DENIED) {
-        console.log('Permission denied');
+        case RESULTS.DENIED:
+          Alert.alert('Permision Denied');
+          break;
+
+        case RESULTS.BLOCKED:
+          Alert.alert('Permission is blocked and not requestable again');
+          break;
+
+        case RESULTS.UNAVAILABLE:
+          Alert.alert('This feature is unavailable in this device');
       }
     } catch (error) {
       console.error('Error requesting permission:', error);
