@@ -5,7 +5,7 @@ export const ProfileImageStyles = StyleSheet.create({
         height: 40,
         width: 40,
         marginBottom: 5,
-        borderRadius:'50%'
+        borderRadius:50
     },
 
 })
