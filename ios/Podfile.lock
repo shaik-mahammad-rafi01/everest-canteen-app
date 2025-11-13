@@ -2438,6 +2438,8 @@ PODS:
     - SocketRocket
   - RNCPushNotificationIOS (1.11.0):
     - React-Core
+  - RNDeviceInfo (15.0.1):
+    - React-Core
   - RNGestureHandler (2.29.1):
     - boost
     - DoubleConversion
@@ -2638,6 +2640,7 @@ DEPENDENCIES:
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - "RNNotifee (from `../node_modules/@notifee/react-native`)"
   - RNPermissions (from `../node_modules/react-native-permissions`)
@@ -2801,6 +2804,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCPushNotificationIOS:
     :path: "../node_modules/@react-native-community/push-notification-ios"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNNotifee:
@@ -2888,6 +2893,7 @@ SPEC CHECKSUMS:
   ReactCodegen: 878add6c7d8ff8cea87697c44d29c03b79b6f2d9
   ReactCommon: 804dc80944fa90b86800b43c871742ec005ca424
   RNCPushNotificationIOS: 6c4ca3388c7434e4a662b92e4dfeeee858e6f440
+  RNDeviceInfo: 36d7f232bfe7c9b5c494cb7793230424ed32c388
   RNGestureHandler: e1cf8ef3f11045536eed6bd4f132b003ef5f9a5f
   RNNotifee: 5e3b271e8ea7456a36eec994085543c9adca9168
   RNPermissions: 38357a69e7fdafbbb6b287d32a3dfff6ffd5e42a
