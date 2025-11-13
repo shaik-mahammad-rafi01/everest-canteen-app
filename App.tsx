@@ -1,7 +1,12 @@
-import { TabNavigations } from './src/navigation/tabNavigation';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { TabNavigations } from './src/navigation/TabNavigation';
 
 function App() {
-  return <TabNavigations />;
+  return (
+    <GestureHandlerRootView>
+      <TabNavigations />
+    </GestureHandlerRootView>
+  );
 }
 
 export default App;
