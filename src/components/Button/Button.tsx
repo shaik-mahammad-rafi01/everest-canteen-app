@@ -2,14 +2,18 @@ import React from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { ButtonStyles } from './ButtonStyles';
 
-const Button = ({title}:{title : string}) => {
+type ButtonProps = {
+  title: string;
+  onPress: () => void;
+};
+const Button = ({ title, onPress }: ButtonProps) => {
   return (
     <View>
-        <Pressable style={ButtonStyles.button}>
-           <Text style={ButtonStyles.buttonText}>{title}</Text>
-        </Pressable>
+      <Pressable style={ButtonStyles.button} onPress={onPress}>
+        <Text style={ButtonStyles.buttonText}>{title}</Text>
+      </Pressable>
     </View>
   );
-}
+};
 
 export default Button;
