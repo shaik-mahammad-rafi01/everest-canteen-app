@@ -16,6 +16,7 @@ Everest canteen is an React-native based application provides user to select foo
 - Add MenuItem to an particular section
 - Remove MenuItem from the particular section
 - Profile image selecttion option
+- Order Notification on click Place Order button
 ### Technologies Used
 - Nodejs
 - React-Native
